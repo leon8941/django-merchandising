@@ -13,9 +13,11 @@ These instructions will get you a copy of the project up and running on your loc
 
 ```
 export WORKON_HOME=~/Envs
-
+```
+```
 source /usr/local/bin/virtualenvwrapper.sh
-
+```
+```
 workon env3 // en3 is the virtual environment I setup 
 ```
 
