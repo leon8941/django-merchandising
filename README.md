@@ -63,8 +63,44 @@ Give an example
 ```
 
 ## Deployment
+Heroku to host the web apps
+* Run the following commands to preparing for deployment to Heroku
+```
+pip install pipenv
 
-Add additional notes about how to deploy this on a live system
+pipenv install
+
+pipenv lock
+```
+
+* And include the following codes in Pipfile
+
+```
+[[source]]
+
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+
+[packages]
+
+django = "*"
+gunicorn = "*"
+django-heroku = "*"
+
+[requires]
+
+python_version = "3.6"
+```
+
+* Install Heroku CLI application then run the following command
+```
+heroku login
+```
+
+
+
+** References **
+[Getting started with Python in Heroku](https://devcenter.heroku.com/articles/getting-started-with-python#introduction) - Getting started with Python in Heroku
 
 ## Built With
 
