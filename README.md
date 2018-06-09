@@ -14,6 +14,7 @@ These instructions will get you a copy of the project up and running on your loc
 ```
 export WORKON_HOME=~/Envs
 ```
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 ```
 source /usr/local/bin/virtualenvwrapper.sh
 ```
