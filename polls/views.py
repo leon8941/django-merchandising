@@ -4,7 +4,10 @@ from django.urls import reverse
 from django.views import generic
 
 from polls.models import Question, GeolocationData, Choice
+
+import pandas as pd
 import googlemaps
+import json
 
 class IndexView(generic.ListView):
     template_name = "polls/index.html"
@@ -42,5 +45,14 @@ def vote(request, question_id):
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
 
 def geolocation(request):
-    return HttpResponse(request, "polls/geolocation.html")
+    geo_data = pd.read_csv("SampleFiles/sample-geolocation.csv")
+
+    sample_data = geo_data[
+        (geo_data.user_id == "wfsv02") 
+    ].copy()
+
+    return render(request, "polls/geolocation.html", {
+        "sample_data": sample_data.to_json(orient="records"),
+        "sample_data_html": sample_data.to_html()
+    })
 
