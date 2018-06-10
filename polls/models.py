@@ -2,6 +2,7 @@ import datetime
 
 from django.db import models
 from django.utils import timezone
+from django_google_maps import fields as map_fields
 
 # Create your models here.
 class Question(models.Model):
@@ -28,3 +29,5 @@ class GeolocationData(models.Model):
     customer_short_name = models.CharField(max_length=255)
     latitude = models.DecimalField(max_digits=9, decimal_places=6)
     longitude = models.DecimalField(max_digits=9, decimal_places=6)
+
+

@@ -19,7 +19,8 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 source /usr/local/bin/virtualenvwrapper.sh
 ```
 ```
-workon env3 // en3 is the virtual environment I setup 
+workon env3 
+// en3 is the virtual environment I setup 
 ```
 
 ### Installing
